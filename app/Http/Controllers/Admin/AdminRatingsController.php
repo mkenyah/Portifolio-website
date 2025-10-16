@@ -10,7 +10,7 @@ class AdminRatingsController extends Controller
 {
     public function index()
     {
-        $ratings = Rating::with(['user', 'project'])->paginate(20);
+        $ratings = Rating::with(['project'])->paginate(20);
         return view('admin.ratings.index', compact('ratings'));
     }
 
